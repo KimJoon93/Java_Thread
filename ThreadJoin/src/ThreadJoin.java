@@ -12,6 +12,14 @@ public class ThreadJoin extends Thread{
 		ThreadJoin threadJoin = new ThreadJoin();
 		threadJoin.start();
 		
+		//Join을 할 경우 스레드가 끝나면 main 끝남 
+		try {
+			threadJoin.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		System.out.println(Thread.currentThread().getName() + "끝");		
 	}
 	
