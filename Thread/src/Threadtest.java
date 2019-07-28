@@ -24,14 +24,21 @@ public class Threadtest extends Thread{
 	public synchronized void start() {
 		// TODO Auto-generated method stub
 		super.start();
-	System.out.println("Start가 먼저!");
 	}
 
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
 		super.run();
-		System.out.println("Run이 먼저!");
+		System.out.println(index + "번 Thread 동작중...");
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(index + "번 Thread 종료...");
+		
 	}
 	
 	
